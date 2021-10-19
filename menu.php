@@ -19,7 +19,7 @@
     </div>
     <br><br>
     <div>
-        <ul  id="form">
+        <div  id="formulari" class="mati">
         <?php
             $menu = file_get_contents('productos.json');
 
@@ -29,47 +29,47 @@
                 $id = $menu_json[$key]["id"];
                 $pro = $menu_json[$key]["Nombre"];
                 $pre = $menu_json[$key]["Precio"];
-
-                echo "<li> $pro </li> <br> $pre <br><br><button class='afegir'>+</button></button><input type='text' id='$id' value='0'><button class='treure'>-</button><br><br>";
+                echo "<div id=$id>";
+                    echo "<p> $pro </p> 
+                          <br> $pre 
+                          <br><br>
+                          <button class='afegir'>+</button><input type='text' id='p$id' value='0'><button class='treure'>-</button>
+                          <br><br>";
+                echo "</div>";
             }
 
         ?>
-        </ul>
+        </div>
+            <input id="prodId" name="prodId" type="hidden" value="{[ JSON AMB LES DADES ]}">
         <script>
-            let gallery = document.getElementById("form");
+            let gallery = document.getElementById("formulari");
             gallery.addEventListener("click", e => {
                 if (e.target.classList.contains("afegir")) {
-                    console.log("Has fet click en afegir");
-                    //Imprimo quien ha generado el evento
-                    console.log(e.target);
-                    //Imprimo el ID del padre de quien ha generado el evento
-                    console.log(e.target.parentNode.id);
-                    //Llamo a la funcion afegirProducte con el id del producto
-                    afegirProducte(e.target.parentNode.id);
+                    id = e.target.parentNode.id;
+                    unitat = document.getElementById("p" + id).value++;
                 }
                 else if (e.target.classList.contains("treure")) {
-                    console.log("Has fet click en treure");
-                    treureProducte(e.target.parentNode.id);
-                }
-                function afegirProducte(idProducte) {
-                    document.getElementById(idProducte).value++;
-
-                    if (document.getElementById(idProducte).value == 1) {
-                        //e.target.style.display="block";
-                        document.querySelectorAll();
+                    id = e.target.parentNode.id;
+                    if (document.getElementById("p"+id).value > 0) {
+                        unitat = document.getElementById("p"+id).value--;
+                        if(document.getElementById("p" + id).value == 0) {
+                        }
                     }
                 }
 
-                function treureProducte(idProducte) {
-                    if (document.getElementById(idProducte).value > 0) {
-                        document.getElementById(idProducte).value--;
-                    }
 
-                    if (document.getElementById(idProducte).value == 0) {
-                        console.log(idProducte + ".treure");
-                        //e.target.style.display="block";
+                mostrar = actualizarCarrito(unitat);
+                console.log(unitat);
+
+                function actualizarCarrito(u) {
+                    htmlStr = "<br><br>";
+                    if (unitat > 0) {
+                        htmlStr += "<h2>La cantidad d'unitats " + unitat + "</h2>";
                     }
+                    return htmlStr;
                 }
+
+                document.write(mostrar);
             });
         </script>
     </div>

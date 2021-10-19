@@ -37,7 +37,8 @@
                 echo "<button type='button'><a  href='/menu.php'>Menu</a></button>";
             ?>
         </div>
-        <div>Formulario</div>
+        <div>Formulari</div>
+        <div>Atenció al client</div>
     </div>
     <br><br>
     <center>
@@ -56,6 +57,11 @@
         <div>
             <?php
                 echo "Contacte";
+            ?>
+        </div>
+        <div>
+            <?php
+                echo "Adreça";
             ?>
         </div>
     </div>

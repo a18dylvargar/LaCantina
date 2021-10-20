@@ -39,30 +39,35 @@
             }
 
             echo "<input id='json' name='json' type='hidden' value='".$menu."'>";
-                  /*  $precio=$menu_json[$id].Precio;
-                    echo "$precio";
-            echo "</>";*/
-
         ?>
         </div>
         <script>
             let gallery = document.getElementById("formulari");
             menuList1 = JSON.parse(document.getElementById("json").value);
+            let sunitat=0;
+            aux = 0;
             gallery.addEventListener("click", e => {
                 if (e.target.classList.contains("afegir")) {
                     id = e.target.parentNode.id;
+                    document.getElementById("p" + id).value++;
                     for(let i=0;i<menuList1.length;i++) {
                         if (menuList1[i].id == id) {
                             pre = menuList1[i].Precio;
+                            pre += pre;
                         }
                     }
-                    if(menuList1[id].id == id){
-                        document.getElementById("p" + id).value++;
-                        unitat = document.getElementById("p"+id).value;
-                        console.log("Primera " + menuList1[0].id);
+                    console.log(pre);
+
+                    /*for(i=0;i<menuList1.length;i++){
+                        if(document.getElementById("p"+id).value > 0){
+                            parseInt(unitat_resultat = unitat + document.getElementById("p"+id).value);
+                        }
                     }
-                    console.log(unitat);
-                    parseFloat(pre = pre*unitat);
+                    */
+                    //console.log(unitat_resultat);
+
+                    //console.log("Primera " + menuList1[i].id);
+                    //parseFloat(pre = pre*unitat);
                 }
 
                 else if (e.target.classList.contains("treure")) {
@@ -81,29 +86,14 @@
                // console.log(pre);
                // console.log(unitat);
 
-                document.getElementById("unitat").innerHTML= unitat;
+                //document.getElementById("unitat").innerHTML= unitat;
                // document.getElementById("precio").innerHTML= pre;
 
-                //mostrar = actualizarCarrito(unitat);
-
-              /*  function actualizarCarrito(u) {
-                    htmlStr = "<br><br>";
-                    if (unitat > 0) {
-                        htmlStr += "<h2>La cantidad d'unitats " + unitat + "</h2>";
-                    }
-                    return htmlStr;
-                }
-
-                document.write(mostrar);
-            */
+                
             });
         </script>
         <div>
-            <h2>Carrito</h2>
-            <p>Total de unidades: </p>
-            <p id="unitat"></p>
-            <p>Total de precio: </p>
-            <p id="precio"></p>
+            
         </div>
     </div>
 </body>

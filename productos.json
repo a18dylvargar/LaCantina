@@ -3,16 +3,16 @@
         {
             "id": 1,
         "Nombre": "Panini",
-        "Precio": "1.50€"
+        "Precio": "1.50"
         },
         {
             "id": 2,
         "Nombre": "Pizza",
-        "Precio": "2.00€"
+        "Precio": "2.00"
         },
         {
             "id": 3,
         "Nombre": "Bocata de anchoas",
-        "Precio": "1.70€"
+        "Precio": "1.70"
         }
     ]

@@ -18,11 +18,8 @@
         ?>
     </div>
     <br><br>
-    <div>
-        <div method="POST" id="formulari" class="mati">
-           
+        <form method="POST" action="ticket.php" id="formulari">
         <?php
-            "<form method='post'>";
             $menu = file_get_contents('productos.json');
 
             $menu_json = json_decode($menu,true);
@@ -32,73 +29,73 @@
                 $pro = $menu_json[$key]["Nombre"];
                 $pre = $menu_json[$key]["Precio"];
                 echo "<div id=$id>";
-                    echo "<p> $pro </p> 
-                          <br> $pre 
+                    echo "<p><b> $pro </b></p> 
+                          <br> $pre € 
                           <br><br>
-                          <button class='afegir'>+</button><input type='text' id='p$id' value='0'><button class='treure'>-</button>
+                          <input type='button' class='afegir' value='+'>
+                          <input name='$id' class='cantidades' type='text' id='p$id' value='0'>
+                          <input type='button' class='treure' value='-'>
                           <br><br>";
                 echo "</div>";
             }
-            "</form>";
 
             echo "<input id='json' name='json' type='hidden' value='".$menu."'>";
         ?>
-        </div>
-        <script>
-            let gallery = document.getElementById("formulari");
-            menuList1 = JSON.parse(document.getElementById("json").value);
-            let pre = 0;
-            gallery.addEventListener("click", e => {
-                if (e.target.classList.contains("afegir")) {
-                    id = e.target.parentNode.id;
-                    document.getElementById("p" + id).value++;
-                    unitat = document.getElementById("p"+id).value;
-                    for(let i=0;i<menuList1.length;i++) {
-                        if(menuList1[i].id == id){
-                            pre = menuList1[i].Precio;
-                            parseFloat(pre = pre * unitat);
-                        }
-                    }
-                    console.log(pre);
-
-                    /*for(i=0;i<menuList1.length;i++){
-                        if(document.getElementById("p"+id).value > 0){
-                            parseInt(unitat_resultat = unitat + document.getElementById("p"+id).value);
-                        }
-                    }
-                    */
-                    //console.log(unitat_resultat);
-
-                    //console.log("Primera " + menuList1[i].id);
-                    //parseFloat(pre = pre*unitat);
-                }
-
-                else if (e.target.classList.contains("treure")) {
-                    id = e.target.parentNode.id;
-                    if (document.getElementById("p"+id).value > 0) {
-                        for(let i=0;i<menuList1.length;i++) {
-                            if (menuList1[i].id == id) {
-                                pre = menuList1[i].Precio;
-                            }
-                        }
-                        document.getElementById("p"+id).value--;
-                        unitat = document.getElementById("p"+id).value;
-                        parseFloat(pre = pre*unitat);
-                    }
-                }
-               // console.log(pre);
-               // console.log(unitat);
-
-                //document.getElementById("unitat").innerHTML= unitat;
-               // document.getElementById("precio").innerHTML= pre;
-
-                
-            });
-        </script>
-        <div>
+        
+        <div id="ticket">
             
         </div>
-    </div>
+        <input type="submit" value="Comprar">
+        </form>
+        
+        
+<script>
+function actualitzarTicket(datosMenu){
+
+    let ticket=document.getElementById("ticket");
+
+    cantidades = document.getElementsByClassName("cantidades");
+    let textTicket="";
+    let Preu_total=0;
+    for(let index = 0;index < cantidades.length;index++){
+        if(cantidades[index].value!=0){
+           textTicket += " Article: " + datosMenu[cantidades[index].parentNode.id].Nombre;
+           textTicket += "<br>";
+           textTicket += " Unitats: " + cantidades[index].value;
+           textTicket += "<br>";
+           textTicket +="   Preu unitari: " +  datosMenu[cantidades[index].parentNode.id].Precio +"€";
+           textTicket += "<br>"; 
+           textTicket +="   Preu total:   " +  datosMenu[cantidades[index].parentNode.id].Precio * cantidades[index].value +"€";
+           Preu_total +=  datosMenu[cantidades[index].parentNode.id].Precio * cantidades[index].value;
+           textTicket += "<br><br>";
+        }
+    }
+    "<br><br>";
+    textTicket+="<h2>   Preu total de todos los productos:   " +  Preu_total + "€</h2>";
+    
+    ticket.innerHTML = textTicket;
+}
+
+let gallery = document.getElementById("formulari");
+menuList = JSON.parse(document.getElementById("json").value);
+let pre = 0;
+gallery.addEventListener("click", e => {
+    if (e.target.classList.contains("afegir")) {
+        id = e.target.parentNode.id;
+        document.getElementById("p" + id).value++;
+        actualitzarTicket(menuList);
+    }
+
+    else if (e.target.classList.contains("treure")) {
+        id = e.target.parentNode.id;
+        if (document.getElementById("p"+id).value > 0) {
+            document.getElementById("p"+id).value--;
+        }
+
+        actualitzarTicket(menuList);
+    }
+});
+</script>
 </body>
 </html>
 

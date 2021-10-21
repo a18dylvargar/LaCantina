@@ -61,18 +61,17 @@
 
     <div id="dos">
         <div  id="tres"><h1>Contacte</h1></div>
-    <div id='one'>
-        93 203 33 32
+        <div id='one'>
+            93 203 33 32
 
-        93 203 36 42
+            93 203 36 42
 
-        93 203 83 86
+            93 203 83 86
 
-        inspedralbes@xtec.cat
+            inspedralbes@xtec.cat
 
-        Web AFA
-    </div>
-
+            Web AFA
+        </div>
     </div>
 
     <div id="dos">

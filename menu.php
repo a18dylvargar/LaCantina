@@ -19,8 +19,10 @@
     </div>
     <br><br>
     <div>
-        <div  id="formulari" class="mati">
+        <div method="POST" id="formulari" class="mati">
+           
         <?php
+            "<form method='post'>";
             $menu = file_get_contents('productos.json');
 
             $menu_json = json_decode($menu,true);
@@ -37,6 +39,7 @@
                           <br><br>";
                 echo "</div>";
             }
+            "</form>";
 
             echo "<input id='json' name='json' type='hidden' value='".$menu."'>";
         ?>
@@ -44,16 +47,16 @@
         <script>
             let gallery = document.getElementById("formulari");
             menuList1 = JSON.parse(document.getElementById("json").value);
-            let sunitat=0;
-            aux = 0;
+            let pre = 0;
             gallery.addEventListener("click", e => {
                 if (e.target.classList.contains("afegir")) {
                     id = e.target.parentNode.id;
                     document.getElementById("p" + id).value++;
+                    unitat = document.getElementById("p"+id).value;
                     for(let i=0;i<menuList1.length;i++) {
-                        if (menuList1[i].id == id) {
+                        if(menuList1[i].id == id){
                             pre = menuList1[i].Precio;
-                            pre += pre;
+                            parseFloat(pre = pre * unitat);
                         }
                     }
                     console.log(pre);

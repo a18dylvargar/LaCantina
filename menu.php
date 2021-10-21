@@ -63,9 +63,9 @@ function actualitzarTicket(datosMenu){
            textTicket += "<br>";
            textTicket += " Unitats: " + cantidades[index].value;
            textTicket += "<br>";
-           textTicket +="   Preu unitari: " +  datosMenu[cantidades[index].parentNode.id].Precio +"€";
+           textTicket +="   Preu unitari: " + datosMenu[cantidades[index].parentNode.id].Precio +"€";
            textTicket += "<br>"; 
-           textTicket +="   Preu total:   " +  datosMenu[cantidades[index].parentNode.id].Precio * cantidades[index].value +"€";
+           textTicket +="   Preu total:   " + datosMenu[cantidades[index].parentNode.id].Precio * cantidades[index].value +"€";
            Preu_total +=  datosMenu[cantidades[index].parentNode.id].Precio * cantidades[index].value;
            textTicket += "<br><br>";
         }

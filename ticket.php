@@ -15,11 +15,22 @@
 
     $menu_json = json_decode($menu,true);
 
+    $Preu_total = 0;
     foreach ($_POST as $id => $value){
             if($value!=0){
-                print "Nombre de producto: ".$menu_json[$pro]["Nombre"]." CANTIDAD:  ".$value."   ".$menu_json[$pro]["Nombre"]."<br>";
+                echo "Nombre de producto: ".$menu_json[$id]["Nombre"].
+                    "<br>".
+                    "Unitats: ".$value.
+                    "<br>".
+                    "Preu unitari: ".$menu_json[$id]["Precio"]."€".
+                    "<br>".
+                    "Preu total: ".$menu_json[$id]["Precio"]*$value."€".
+                    "<br><br>";
+                    $Preu_total+=$menu_json[$id]["Precio"]*$value;
             }
         }
+        "<br><br>";
+        echo "Preu Total de los productos: ".$Preu_total."€";
     ?>
     </div>
 </body>

@@ -18,7 +18,7 @@
         ?>
     </div>
     <br><br>
-        <form method="POST" action="ticket.php" id="formulari">
+        <form method="POST" action="./ticket.php" id="formulari">
         <?php
             $menu = file_get_contents('productos.json');
 
@@ -41,10 +41,7 @@
 
             echo "<input id='json' name='json' type='hidden' value='".$menu."'>";
         ?>
-        
-        <div id="ticket">
-            
-        </div>
+        <div id="ticket"></div>
         <input type="submit" value="Comprar">
         </form>
         

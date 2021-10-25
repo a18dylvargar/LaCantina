@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="/css/validacion.css"/>
 </head>
     <body>
+        <?php
+            include "header.php";
+        ?>
         <div id="flex">
             <div id="ticket">
             <h1>Validacion de compra</h1>

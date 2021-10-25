@@ -39,6 +39,7 @@
                 <div class="main">
                     <h1>Validació d'usuari</h1>
                     <center>
+                        <form action="confirmacion.php">
                             <fieldset>
                                 <legend>Introdueix les següents dades per verificar l'accés al menú</legend>
                                 <div>
@@ -59,33 +60,66 @@
                             </fieldset>
                             <button type="submit" id="comprar" value="Sumbit">Comprar</button>
                             <button type="reset" name="sumbit" value="Inicialitza">Borrar</button>
+                        </form>
                     </center>
                 </div>
             </div>
         </div>
         <script>
+            window.onload = function(){
+                document.getElementById("username").focus();
+            }
             document.getElementById("comprar").addEventListener("click",function (e){
-                if(document.getElementById("username").value == ""){
-                    alert("Tienes que introducir tu nombre");
+                function comprovarNom(){
+                    if(document.getElementById("username").value == ""){
+                       return 1;
+                    }
+                    else if(!( /^[A-Za-zƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ]*$/.exec(document.getElementById("username").value))) {
+                        return 2;
+                    }
+                }
+                function comprovarTele() {
+                    if (document.getElementById("tel").value == "") {
+                        return 1;
+                    } else if (!(/^[0-9]+$/.exec(document.getElementById("tel").value))) {
+                        return 2;
+                    }
+                }
+
+                function comproEmail() {
+                    if (document.getElementById("correo").value == "") {
+                        return 1;
+                    } else if (!(/^([a-zA-Z0-9._-]+)@inspedralbes.cat$/.exec(document.getElementById("correo").value))) {
+                        return 2;
+                    }
+                }
+
+                if(comprovarNom() == 1){
+                    alert("Introduir un nom");
                     e.preventDefault();
                 }
-                else if(document.getElementById("correo").value == ""){
+                else if(comprovarNom() == 2){
+                    alert("Solo palabras");
+                    e.preventDefault();
+                }
+                if(comprovarTele() == 1){
+                    alert("Introduce un numero");
+                    e.preventDefault();
+                }
+                else if(comprovarTele() == 2){
+                    alert("El numero debe contener nueve digitos");
+                    e.preventDefault();
+                }
+                if(comproEmail() == 1){
                     alert("Tienes que escribir un correo");
                     e.preventDefault();
                 }
-                else if(!(/^([a-zA-Z0-9._-]+)@inspedralbes.cat$/.exec(document.getElementById("correo").value))){
+                else if(comproEmail() == 2){
                     alert("Tiene que ser el correo del institut Pedralbes");
                     e.preventDefault();
                 }
-                /* else if(document.getElementById("tel").value == "") {
-                     alert("El numero debe contener nueve digitos");
-                     e.preventDefault();
-                 }
-                 else if(!(/^[0-9]+$/.test(document.getElementById("tel").value))){
-                     alert("El numero debe contener nueve digitos");
-                     e.preventDefault();
-                 } */
             });
         </script>
+        <input type="button" value="Página anterior" onClick="history.go(-1);">
     </body>
 </html>

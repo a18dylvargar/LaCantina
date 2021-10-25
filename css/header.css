@@ -1,3 +1,11 @@
+#flex{
+    display: flex;
+    background: #B9A8A8;
+}
+#titul{
+    margin-left: 700px;
+    margin-top: 50px;
+}
 img{
     width: 100px;
     float: bottom;

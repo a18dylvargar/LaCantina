@@ -11,7 +11,7 @@
         <?php
             include "header.php";
         ?>
-        <div id="flex">
+        <div id="flex_ticket">
             <div id="ticket">
             <h1>Validacion de compra</h1>
             <?php

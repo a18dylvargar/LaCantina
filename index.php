@@ -16,7 +16,7 @@
     <div id="flex_index">
             <div>
                 <?php
-                    echo "<button type='button'><a  href='/menu.php'>Menu</a></button>";
+                    echo "<button type='button'><a  href='menu.php'>Menu</a></button>";
                 ?>
             </div>
             <div>Formulari</div>

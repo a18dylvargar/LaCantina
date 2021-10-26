@@ -10,28 +10,15 @@
     <?php
         include "header.php";
     ?>
-    <br>
-    <form action="ticket.php">
-        <input type="submit" name="button" value="Validacion">
-    </form>
-    <br>
+    <h1>Tu Ticket</h1>
     <?php
-        echo "confirmacion";
-        echo "<br>";
+        echo "Nom: "
     ?>
-    <br>
     <form action="index.php">
         <input type="submit" name="button" value="Inici">
     </form>
     <?php
-        echo "<br>";
-        if(isset($_COOKIE["Validacion"])){
-            echo "La cookie ya existe";
-        }
-        else {
-            echo "Si no existe, la creamos";
-            setcookie("Validacion",54321);
-        }
+        setcookie("Confirmacion",1,time()+86400);
     ?>
 </body>
 </html>

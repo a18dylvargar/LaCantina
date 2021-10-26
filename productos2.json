@@ -1,16 +1,16 @@
 [
     {
-        "id": 3,
+        "id": 0,
     "Nombre": " Tortilla",
     "Precio": "2.50"
     },
     {
-        "id": 4,
+        "id": 1,
     "Nombre": "Macarrones",
     "Precio": "3.00"
     },
     {
-        "id": 5,
+        "id": 2,
     "Nombre": "Paella",
     "Precio": "1.70"
     }

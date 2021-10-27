@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmacion</title>
+    <link rel="stylesheet" type="text/css" href="normalice.css"/>
 </head>
 <body>
     <?php
@@ -24,26 +25,38 @@
         echo "<br>";
         echo "<center>";
 
-        $numero = rand();
-        $fh = fopen("$numero.txt","wr") or die("Se produjo un error al crear el archivo");
+        $hora = date("H");
+        $minutos = date("i");
+
+        if(($hora < 11) || ($hora == 11 && $minutos <= 30)){
+            $nombreFichero = date("m.d.y") . "_mati.txt";
+        }
+        else  $nombreFichero = date("m.d.y") . "_tarda.txt";
+
+        $fh = fopen($nombreFichero, "a+") or die("Se produjo un error al crear el archivo");
 
         $texto = <<<_END
+        \n
         Informacion del usuario:
         Nombre: $_POST[username]
         Telefono: $_POST[telefono]
         Correo: $_POST[correo]
-        El pedido:
+        Informacion del pedido:
         $_SESSION[Pedido]
 _END;
         fwrite($fh, $texto);
         fclose($fh);
+        echo "Se ha escrito sin problemas";
 
-        echo "Se ha escrito sin problemas;"
-
+        session_destroy();
     ?>
+    <br><br>
     <form action="index.php">
         <input type="submit" name="button" value="Inici">
     </form>
+    <?php
+        include "footer.php";
+    ?>
     <?php
         //setcookie("Confirmacion",1,time()+86400);
     ?>

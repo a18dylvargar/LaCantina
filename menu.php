@@ -10,11 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
-    <style>
-        table{
-            background: red;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="normalice.css"/>
 </head>
 <body>
     <div>
@@ -77,101 +73,11 @@
 
         <br><br>
         <div id="ticket"></div>
-        
-<script>
-    function actualitzarTicket(datosMenu){
 
-        let ticket=document.getElementById("ticket");
-
-        cantidades = document.getElementsByClassName("cantidades");
-        let textTicket="";
-        let Preu_total=0;
-        for(let index = 0;index < cantidades.length;index++){
-            if(cantidades[index].value!=0){
-                textTicket += " Article: " + datosMenu[cantidades[index].parentNode.id].Nombre;
-                textTicket += "<br>";
-                textTicket += " Unitats: " + cantidades[index].value;
-                textTicket += "<br>";
-                textTicket +="   Preu unitari: " + datosMenu[cantidades[index].parentNode.id].Precio +"€";
-                textTicket += "<br>";
-                textTicket +="   Preu total:   " + datosMenu[cantidades[index].parentNode.id].Precio * cantidades[index].value +"€";
-                Preu_total +=  datosMenu[cantidades[index].parentNode.id].Precio * cantidades[index].value;
-                textTicket += "<br><br>";
-            }
-        }
-        "<br><br>";
-        textTicket+="<h2>   Preu total de todos los productos:   " +  Preu_total + "€</h2>";
-
-        ticket.innerHTML = textTicket;
-    }
-
-    dia = new Date();
-    hora = dia.getHours();
-    //minutos = dia.getMinutes();
-    horario = "";
-
-   /* if(hora >= 11) {
-        if(minutos > 30) {
-            horario = document.getElementById("tarda");
-            document.getElementById("mati").style.display = "none";
-        }
-        else if(hora == 11) {
-            if(minutos < 30) {
-                horario = document.getElementById("mati");
-                document.getElementById("tarda").style.display = "none";
-            }
-        }
-        else {
-            horario = document.getElementById("tarda");
-            document.getElementById("mati").style.display = "none";
-        }
-    }
-    else if(hora <= 11) {
-        if(minutos < 30) {
-            horario = document.getElementById("mati");
-            document.getElementById("tarda").style.display = "none";
-        }
-        else if(hora == 11) {
-            if (minutos > 30) {
-                horario = document.getElementById("tarda");
-                document.getElementById("mati").style.display = "none";
-            }
-        }
-        else{
-            horario = document.getElementById("mati");
-            document.getElementById("tarda").style.display = "none";
-        }
-    }
-    */
-
-    if (hora >= 11) {
-        horario = "tarda";
-        document.getElementById("mati").style.display = "none";
-
-    }
-    else {
-        horario = "mati";
-        document.getElementById("tarda").style.display = "none";
-
-    }
-    console.log(horario);
-    menuList = JSON.parse(document.getElementById("json_"+horario).value);
-    document.getElementById(horario).addEventListener("click", e => {
-        if (e.target.classList.contains("afegir")) {
-            id = e.target.parentNode.id;
-            document.getElementById((horario == "mati" ? "m"  : "t") + id).value++;
-            actualitzarTicket(menuList);
-        }
-
-        else if (e.target.classList.contains("treure")) {
-            id = e.target.parentNode.id;
-            if (document.getElementById((horario == "mati" ? "m"  : "t") + id).value > 0) {
-                document.getElementById((horario == "mati" ? "m"  : "t") + id).value--;
-            }
-            actualitzarTicket(menuList);
-        }
-    });
-</script>
+    <script src="/js/menu.js"></script>
+    <?php
+        include "footer.php";
+    ?>
 </body>
 </html>
 

@@ -1,0 +1,64 @@
+/*Header*/
+#flex{
+    display: flex;
+    background: #B9A8A8;
+}
+#titul{
+    margin-left: 700px;
+    margin-top: 50px;
+}
+img{
+    width: 100px;
+    float: bottom;
+}
+h1{
+    text-align: center;
+}
+
+/*index.php*/
+#informacion{
+    float: left;
+}
+#flex_index{
+    display: flex;
+    flex-wrap: nowrap;
+    background: #76CEFF;
+}
+#flex_index > div{
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+}
+.lista_submenu{
+    background: deepskyblue;
+    padding: 15px 32px;
+}
+
+/*validacion*/
+#flex_ticket{
+    display: flex;
+}
+#ticket{
+    margin-right: 100px;
+}
+label {
+    display: block;
+    float: center;
+    width: 200px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.texto_validacion {
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.botone_validacion {
+    margin-top: 20px;
+}
+.error{
+    color: red;
+}

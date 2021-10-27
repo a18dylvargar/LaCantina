@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validacion</title>
-    <link rel="stylesheet" type="text/css" href="/css/validacion.css"/>
+    <link rel="stylesheet" type="text/css" href="normalice.css"/>
 </head>
     <body>
         <?php
@@ -13,10 +13,18 @@
         ?>
         <div id="flex_ticket">
             <div id="ticket">
-            <h1>Tu tiquet</h1>
+            <h1>El tiquet</h1>
             <?php
 
-            $menu = file_get_contents('productos.json');
+            $hora = date("H");
+            $minutos = date("i");
+
+            if(($hora < 11) || ($hora == 11 && $minutos <= 30)) {
+                $menu = file_get_contents('productos.json');
+            }
+            else {
+                $menu = file_get_contents('productos2.json');
+            }
 
             $menu_json = json_decode($menu,true);
 
@@ -65,22 +73,22 @@
                                 <legend>Introdueix les següents dades per verificar l'accés al menú</legend>
                                 <div>
                                     <label for="name">Nom</label>
-                                    <input name="username" type="text" id="username" value="">
+                                    <input class="texto_validacion" name="username" type="text" id="username" value="">
                                     <span class="error">*</span>
                                 </div>
                                 <div>
                                     <label for="tel">Telèfon</label>
-                                    <input type="tel" id="tel" name="telefono" value="">
+                                    <input class="texto_validacion" type="tel" id="tel" name="telefono" value="">
                                     <span class="error">*</span>
                                 </div>
                                 <div>
                                     <label for="email">Correu electrònic</label>
-                                    <input type="email" id="correo" name="correo" value="">
+                                    <input class="texto_validacion" type="email" id="correo" name="correo" value="">
                                     <span class="error">*</span>
                                 </div>
                             </fieldset>
-                            <button type="submit" id="comprar" value="Sumbit">Comprar</button>
-                            <button type="reset" name="sumbit" value="Inicialitza">Borrar</button>
+                            <button type="submit" class="botone_validacion" value="Sumbit">Comprar</button>
+                            <button type="reset" class="botone_validacion" name="sumbit" value="Inicialitza">Borrar</button>
                         </form>
                     </center>
                 </div>
@@ -88,5 +96,8 @@
         </div>
         <script src="/js/ticket.js"></script>
         <input type="button" value="Página anterior" onClick="history.go(-1);">
+        <?php
+            include "footer.php";
+        ?>
     </body>
 </html>

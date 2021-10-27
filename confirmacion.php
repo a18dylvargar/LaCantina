@@ -24,7 +24,8 @@
         echo "<br>";
         echo "<center>";
 
-        $fh = fopen("prueba.txt","wr") or die("Se produjo un error al crear el archivo");
+        $numero = rand();
+        $fh = fopen("$numero.txt","wr") or die("Se produjo un error al crear el archivo");
 
         $texto = <<<_END
         Informacion del usuario:
@@ -34,7 +35,7 @@
         El pedido:
         $_SESSION[Pedido]
 _END;
-        fwrite($fh, $texto) or die("No se pudo escribir en el archivo");
+        fwrite($fh, $texto);
         fclose($fh);
 
         echo "Se ha escrito sin problemas;"

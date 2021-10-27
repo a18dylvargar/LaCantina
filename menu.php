@@ -23,7 +23,7 @@
         ?>
     </div>
     <br><br>
-        <form method="POST" action="ticket.php" id="mati">
+        <form method="POST" action="validacion_comanda.php" id="mati">
             <?php
                 $menu = file_get_contents('productos.json');
                 $menu_json = json_decode($menu,true);
@@ -49,7 +49,7 @@
             <input type="submit" value="Comprar">
         </form>
 
-        <form method="POST" action="ticket.php" id="tarda">
+        <form method="POST" action="validacion_comanda.php" id="tarda">
             <?php
             $menu = file_get_contents('productos2.json');
             $menu_json = json_decode($menu,true);
@@ -144,7 +144,7 @@
     }
     */
 
-    if (hora >= 14){
+    if (hora >= 11) {
         horario = "tarda";
         document.getElementById("mati").style.display = "none";
 

@@ -144,7 +144,7 @@
     }
     */
 
-    if (hora >= 14){
+    if (hora >= 11) {
         horario = "tarda";
         document.getElementById("mati").style.display = "none";
 

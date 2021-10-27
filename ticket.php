@@ -34,8 +34,26 @@
                             $Preu_total+=$menu_json[$id]["Precio"]*$value;
                     }
                 }
-                "<br><br>";
-                echo "Preu Total de los productos: ".$Preu_total."€";
+            "<br><br>";
+            echo "Preu Total de los productos: ".$Preu_total."€";
+
+            $comanda = "";
+            $Preu_total = 0;
+            foreach ($_POST as $id => $value){
+                if($value!=0){
+                    $comanda.="Nombre de producto: ".$menu_json[$id]["Nombre"].
+                        ".....".
+                        "Unitats: ".$value.
+                        ".....".
+                        "Preu unitari: ".$menu_json[$id]["Precio"]."€".
+                        ".....".
+                        "Preu total: ".$menu_json[$id]["Precio"]*$value."€".
+                        ".....";
+                }
+            }
+
+            session_start();
+            $_SESSION["Pedido"] = $comanda;
             ?>
             </div>
             <form method="post" action="confirmacion.php">
@@ -67,29 +85,6 @@
                     </center>
                 </div>
             </form>
-            <?php
-
-            $menu = file_get_contents('productos.json');
-
-            $menu_json = json_decode($menu,true);
-
-            $Preu_total = 0;
-            foreach ($_POST as $id => $value){
-                if($value!=0){
-                    echo "Nombre de producto: ".$menu_json[$id]["Nombre"].
-                        "<br>".
-                        "Unitats: ".$value.
-                        "<br>".
-                        "Preu unitari: ".$menu_json[$id]["Precio"]."€".
-                        "<br>".
-                        "Preu total: ".$menu_json[$id]["Precio"]*$value."€".
-                        "<br><br>";
-                    $Preu_total+=$menu_json[$id]["Precio"]*$value;
-                }
-            }
-            "<br><br>";
-            echo "Preu Total de los productos: ".$Preu_total."€";
-            ?>
         </div>
         <script src="/js/ticket.js"></script>
         <input type="button" value="Página anterior" onClick="history.go(-1);">

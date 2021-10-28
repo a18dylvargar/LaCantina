@@ -28,22 +28,26 @@
     fclose($fh);
     echo $text */
 
-    $archivo = "";
-    echo "<input type='text' id='$archivo' value=''>";
-
-    $fp = fopen ( "./admin/comandes/".$archivo."r") or die("Se produjo un error al abrir el archivo");
-
-    while(!feof($fp)){
-        $linia = fgets($fp);
-        echo nl2br($linia);
+    echo "<h2>Totes les comandes</h2>";
+    $directorio = opendir("../admin/comandes"); //ruta actual
+    while ($archivo = readdir($directorio)) //obtenemos un archivo y luego otro sucesivamente
+    {
+        if (is_dir($archivo)) {
+            if ($archivo != '.' && $archivo != '..') {
+                echo "[" . $archivo . "]<br />"; //de ser un directorio lo envolvemos entre corchetes
+            }
+        }
+        else {
+            echo $archivo . "<br />";
+        }
     }
+
+
+
     ?>
     <br><br>
     <form action="../index.php">
         <input type="submit" name="boton" value="Inici">
-    </form>
-    <form action="../historial.php">
-        <input type="submit" name="boton" value="Historial">
     </form>
     <?php
         include "../footer.php";

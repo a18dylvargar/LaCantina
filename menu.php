@@ -39,7 +39,7 @@
                     echo "</div>";
                 }
 
-                echo "<input id='json_mati' name='json_mati' type='hidden' value='".$menu."'>";
+                echo "<input id='json_mati' name='json' type='hidden' value='".$menu."'>";
             ?>
 
             <input type="submit" value="Comprar">
@@ -65,7 +65,7 @@
                 echo "</div>";
             }
 
-            echo "<input id='json_tarda' name='json_tarda' type='hidden' value='".$menu."'>";
+            echo "<input id='json_tarda' name='json' type='hidden' value='".$menu."'>";
             ?>
 
             <input type="submit" value="Comprar">

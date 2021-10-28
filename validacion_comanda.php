@@ -16,17 +16,7 @@
             <h1>El tiquet</h1>
             <?php
 
-            $hora = date("H");
-            $minutos = date("i");
-
-            if(($hora < 11) || ($hora == 11 && $minutos <= 30)) {
-                $menu = file_get_contents('productos.json');
-            }
-            else {
-                $menu = file_get_contents('productos2.json');
-            }
-
-            $menu_json = json_decode($menu,true);
+            $menu_json = json_decode($_POST["json"],true);
 
             $Preu_total = 0;
             foreach ($_POST as $id => $value){

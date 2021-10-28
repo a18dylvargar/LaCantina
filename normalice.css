@@ -62,3 +62,31 @@ label {
 .error{
     color: red;
 }
+
+/*footer*/
+#imp{
+    flex-wrap: wrap;
+    display: flex;
+    background-color: blueviolet;
+    justify-content: center;
+    margin-top: 20px;
+}
+#one{
+    background-color: green;
+    word-wrap: break-word;
+    width: 200px;
+    height: 200px;
+}
+#dos{
+    flex-direction: column
+}
+#tres{
+    background-color: yellow;
+    width: 200px;
+    height: 50px;
+}
+#divimg{
+    background-color: deepskyblue;
+    height: 200px;
+    width: 200px;
+}

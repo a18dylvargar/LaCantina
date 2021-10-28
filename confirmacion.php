@@ -33,7 +33,7 @@
         }
         else  $nombreFichero = date("m.d.y") . "_tarda.txt";
 
-        $fh = fopen($nombreFichero, "a+") or die("Se produjo un error al crear el archivo");
+        $fh = fopen("./admin/comandes/".$nombreFichero, "a+") or die("Se produjo un error al crear el archivo");
 
         $texto = <<<_END
         \n

@@ -15,19 +15,35 @@
     <h1>Pantalla administració</h1>
     <?php
 
-        $archivo = "";
+    /*$archivo = "";
 
-        echo "Selecciona un archivo para consultar: <input type='text' id='$archivo' value=''>";
+    echo "Selecciona un archivo para consultar: <input type='text' id='$archivo' value=''>";
 
-        $fh = fopen("$archivo",'r') or die("Se produjo un error al abrir el archivo");
+    $fh = fopen("$archivo",'r') or die("Se produjo un error al abrir el archivo");
 
-        $text = "";
-        while($line = fgets($fh)){
-            $text .= $line. "<br>";
-        }
-        fclose($fh);
-        echo $text
+    $text = "";
+    while($line = fgets($fh)){
+        $text .= $line. "<br>";
+    }
+    fclose($fh);
+    echo $text */
+
+    $dir = opendir("./");
+
+    while(!feof($dir)){
+        echo "$dir";
+    }
+    $archivo = "";
+    echo "<input type='text' id='$archivo' value=''>";
+
+    $fp = fopen ( "./admin/comandes/".$archivo."r") or die("Se produjo un error al abrir el archivo");
+
+    while(!feof($fp)){
+        $linia = fgets($fp);
+        echo nl2br($linia);
+    }
     ?>
+    <br><br>
     <form action="../index.php">
         <input type="submit" name="boton" value="Inici">
     </form>

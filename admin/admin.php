@@ -28,11 +28,6 @@
     fclose($fh);
     echo $text */
 
-    $dir = opendir("./");
-
-    while(!feof($dir)){
-        echo "$dir";
-    }
     $archivo = "";
     echo "<input type='text' id='$archivo' value=''>";
 

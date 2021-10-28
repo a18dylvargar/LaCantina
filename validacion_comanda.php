@@ -39,14 +39,16 @@
             $Preu_total = 0;
             foreach ($_POST as $id => $value){
                 if($value!=0){
-                    $comanda.="Nombre de producto: ".$menu_json[$id]["Nombre"].
-                        ".....".
-                        "Unitats: ".$value.
-                        ".....".
-                        "Preu unitari: ".$menu_json[$id]["Precio"]."€".
-                        ".....".
-                        "Preu total: ".$menu_json[$id]["Precio"]*$value."€".
-                        ".....";
+                    $comanda.=
+                        "\n".
+                            "Nombre de producto: ".$menu_json[$id]["Nombre"].
+                            " ..... ".
+                            "Unitats: ".$value.
+                            " ..... ".
+                            "Preu unitari: ".$menu_json[$id]["Precio"]."€".
+                            " ..... ".
+                            "Preu total: ".$menu_json[$id]["Precio"]*$value."€".
+                            " ..... ";
                 }
             }
 

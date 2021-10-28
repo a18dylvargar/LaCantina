@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> PAGINA DE ADMIN   </h1>
-    <p> hola</p>
+    <h1>PAGINA DE ADMIN</h1>
+    <p>hola</p>
 
 </body>
 </html>

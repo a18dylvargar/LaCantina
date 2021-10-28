@@ -37,12 +37,14 @@
 
         $texto = <<<_END
         \n
-        Informacion del usuario:
-        Nombre: $_POST[username]
-        Telefono: $_POST[telefono]
-        Correo: $_POST[correo]
-        Informacion del pedido:
-        $_SESSION[Pedido]
+        · Informacion del usuario:
+        
+            Nombre: $_POST[username]
+            Telefono: $_POST[telefono]
+            Correo: $_POST[correo]
+            
+        · Informacion del pedido:
+            $_SESSION[Pedido]
 _END;
         fwrite($fh, $texto);
         fclose($fh);

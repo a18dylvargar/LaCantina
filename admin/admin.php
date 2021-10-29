@@ -29,20 +29,26 @@
     echo $text */
 
     echo "<h2>Totes les comandes</h2>";
-    $directorio = opendir("../admin/comandes"); //ruta actual
-    while ($archivo = readdir($directorio)) //obtenemos un archivo y luego otro sucesivamente
-    {
-        if (is_dir($archivo)) {
-            if ($archivo != '.' && $archivo != '..') {
-                echo "[" . $archivo . "]<br />"; //de ser un directorio lo envolvemos entre corchetes
+
+    $dir = "../admin/comandes";
+    // Open a known directory, and proceed to read its contents
+    if (is_dir($dir)) {
+        if ($dh = opendir($dir)) {
+            echo "<ul>";
+            while (($file = readdir($dh)) !== false) {
+
+                if($file != "." && $file != "..") {
+                    echo "<li><h4>" . $file . "</h4></li>";
+                    $texto = file_get_contents("./comandes/".$file);
+                    $texto = nl2br($texto);
+                    echo $texto;
+                    echo "<br><br>";
+                }
             }
-        }
-        else {
-            echo $archivo . "<br />";
+            closedir($dh);
+            echo "</ul>";
         }
     }
-
-
 
     ?>
     <br><br>

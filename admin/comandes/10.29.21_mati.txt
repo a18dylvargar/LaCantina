@@ -1,0 +1,12 @@
+        
+
+        · Informacion del usuario:
+        
+            Nombre: Kevin
+            Telefono: 66567889
+            Correo: camilo@inspedralbes.cat
+            
+        · Informacion del pedido:
+            
+Nombre de producto: Panini ..... Unitats: 2 ..... Preu unitari: 1.50€ ..... Preu total: 3€ ..... 
+Nombre de producto: Pizza ..... Unitats: 1 ..... Preu unitari: 2.00€ ..... Preu total: 2€ ..... 

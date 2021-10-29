@@ -63,7 +63,7 @@ _END;
         include "footer.php";
     ?>
     <?php
-        //setcookie("Confirmacion",1,time()+86400);
+        setcookie("Confirmacion",1,time()+86400);
     ?>
 </body>
 </html>

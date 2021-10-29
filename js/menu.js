@@ -29,8 +29,6 @@ hora = dia.getHours();
 minutos = dia.getMinutes();
 horario = "";
 
-
-
 if((hora < 11) || (hora == 11 && minutos <= 30)){
     horario = "mati";
     document.getElementById("tarda").style.display = "none";

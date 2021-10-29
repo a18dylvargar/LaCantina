@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INDEX</title>
-    <link rel='stylesheet' type='text/css' href='normalice.css'/>
+    <link rel='stylesheet' type='text/css' href='./css/normalice.css'/>
 </head>
 <body>
     <div>
@@ -27,12 +27,15 @@
     </div>
     <br><br>
     <center>
-        <div>
-            <?php
-                echo "Para imagenes";
-            ?>
+        <div class="slider">
+            <ul>
+                <li><img src="./img/cafe.png"></li>
+                <li><img src="./img/pizzas.png"></li>
+                <li><img src="./img/paninis.png"></li>
+                <li><img src="./img/entrepa.png"></li>
+            </ul>
         </div>
-    <br><br>
+        <br><br>
     </center>
     <?php
         include "footer.php";

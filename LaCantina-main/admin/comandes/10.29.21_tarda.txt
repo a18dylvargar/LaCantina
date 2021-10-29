@@ -1,0 +1,10 @@
+        
+
+        · Informacion del usuario:
+        
+            Nombre: 
+            Telefono: 
+            Correo: 
+            
+        · Informacion del pedido:
+            

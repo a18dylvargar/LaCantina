@@ -67,26 +67,33 @@ label {
 #imp{
     flex-wrap: wrap;
     display: flex;
-    background-color: blueviolet;
+    background-color: #B9A8A8;
     justify-content: center;
-    margin-top: 20px;
+    padding-top: 20px;
+    padding-left: 0%;
+    margin-left: 0%;
+    _padding: 20px;
 }
 #one{
-    background-color: green;
+    background-color: #B9A8A8;
     word-wrap: break-word;
     width: 200px;
     height: 200px;
+    padding: 20px;
+
 }
 #dos{
     flex-direction: column
 }
 #tres{
-    background-color: yellow;
+    background-color: #B9A8A8;
     width: 200px;
     height: 50px;
 }
 #divimg{
-    background-color: deepskyblue;
+    background-color: #B9A8A8;
     height: 200px;
     width: 200px;
+    padding: 20px;
+
 }

@@ -11,9 +11,6 @@ img{
     width: 100px;
     float: bottom;
 }
-h1{
-    text-align: center;
-}
 
 /*index.php*/
 #informacion{
@@ -21,8 +18,21 @@ h1{
 }
 #flex_index{
     display: flex;
-    flex-wrap: nowrap;
+    justify-content: space-between;
     background: #76CEFF;
+    padding-right: 60px;
+}
+#lista_inici{
+    background: #76CEFF;
+    padding: 15px 36px;
+}
+#lista_menu{
+    background: #76CEFF;
+    padding: 15px 32px;
+}
+#lista_admin{
+    background: #76CEFF;
+    padding: 15px 32px;
 }
 #flex_index > div{
     background-color: #f1f1f1;
@@ -30,20 +40,15 @@ h1{
     margin: 10px;
     text-align: center;
 }
-.lista_submenu{
-    background: deepskyblue;
-    padding: 15px 32px;
-}
-
 .slider {
-    width: 95%;
+    width: 100%;
     margin: auto;
     overflow: hidden;
 }
 .slider ul {
     display: flex;
     padding: 0px;
-    width: 400%;
+    width: 350%;
     animation: canviImatge 15s infinite alternate linear;
 }
 .slider li {
@@ -69,12 +74,52 @@ h1{
     100% {margin-left: -300%;}
 }
 
-/*validacion*/
+/*Menu*/
+.grid_contenido{
+    display: grid;
+    border: 4px solid black;
+    background: red;
+    grid-template-columns: 500px 500px 500px;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+.grid_productes{
+    text-align: center;
+    background: #76CEFF;
+    border: solid 3px black;
+    margin: 20px;
+}
+#boton1{
+    margin-top: 150px;
+    margin-left: 150px;
+    width: 200px;
+    height: 50px;
+}
+#boton2{
+    margin-top: 150px;
+    margin-left: 150px;
+    width: 200px;
+    height: 50px;
+}
+#ticket{
+    background: #76CEFF;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border: 4px solid black;
+}
+
+/*validacion_usuari*/
 #flex_ticket{
     display: flex;
     justify-content: center;
 }
-#ticket{
+#ticket_validacio{
+    background: #76CEFF;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: solid 1px black;
     margin-right: 100px;
 }
 label {
@@ -97,6 +142,11 @@ label {
     color: red;
 }
 
+/*Cookie*/
+.contError {
+    margin: 10px;
+}
+
 /*footer*/
 #imp{
     flex-wrap: wrap;
@@ -115,7 +165,6 @@ label {
     width: 200px;
     height: 200px;
     padding: 20px;
-
 }
 #dos{
     flex-direction: column
@@ -131,8 +180,4 @@ label {
     width: 200px;
     padding: 20px;
 
-}
-
-.contError {
-    margin: 10px;
 }

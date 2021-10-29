@@ -6,7 +6,7 @@ document.getElementById("comprar").addEventListener("click",function (e){
         if(document.getElementById("username").value == ""){
             return 1;
         }
-        else if(!( /^[A-Za-zƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ]*$/.exec(document.getElementById("username").value))) {
+        else if(!( /^[A-Za-zƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊ ËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ]*$/.exec(document.getElementById("username").value))) {
             return 2;
         }
     }
@@ -27,27 +27,27 @@ document.getElementById("comprar").addEventListener("click",function (e){
     }
 
     if(comprovarNom() == 1){
-        alert("Introdueix un nom");
+        alert("Nom: Introdueix un nom");
         e.preventDefault();
     }
     else if(comprovarNom() == 2){
-        alert("Tenen que ser paraules");
+        alert("Nom: Tenen que ser paraules");
         e.preventDefault();
     }
     if(comprovarTele() == 1){
-        alert("Introdueix un numero");
+        alert("Telèfon: Introdueix un numero");
         e.preventDefault();
     }
     else if(comprovarTele() == 2){
-        alert("El numero de telefono tiene que contener nueve digitos");
+        alert("Telèfon: El numero de telefono tiene que contener nueve digitos");
         e.preventDefault();
     }
     if(comproEmail() == 1){
-        alert("Tienes que escribir un correo");
+        alert("Correu electrònic: Tienes que escribir un correo");
         e.preventDefault();
     }
     else if(comproEmail() == 2){
-        alert("Tiene que ser el correo del institut Pedralbes");
+        alert("Correu electrònic: Tiene que ser el correo del institut Pedralbes");
         e.preventDefault();
     }
 });

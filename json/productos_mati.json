@@ -3,26 +3,31 @@
         {
             "id": 0,
         "Nombre": "Panini",
-        "Precio": "1.50"
+        "Precio": "1.50",
+         "Ruta": "../img/panini.png"
         },
         {
             "id": 1,
         "Nombre": "Pizza",
-        "Precio": "2.00"
+        "Precio": "2.00",
+          "Ruta": "../img/pizza.png"
         },
         {
             "id": 2,
         "Nombre": "Entrepà de pernil",
-        "Precio": "1.70"
+        "Precio": "1.70",
+          "Ruta": "../img/entrepa.png"
         },
         {
             "id": 3,
         "Nombre": "Coca-cola",
-        "Precio": "1.00"
+        "Precio": "1.00",
+          "Ruta": "../img/cocacola.png"
         },
         {
             "id": 4,
-        "Nombre": "Fanta",
-        "Precio": "1.00"
+        "Nombre": "Cafe",
+        "Precio": "1.00",
+          "Ruta": "../img/cafe.png"
         }
     ]

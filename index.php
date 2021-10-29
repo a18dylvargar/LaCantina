@@ -19,8 +19,6 @@
                     echo "<button class='lista_submenu' type='button'><a  href='menu.php'>Menu</a></button>";
                 ?>
             </div>
-            <div>Formulari</div>
-            <div>Atenció al client</div>
             <div>
                 <?php
                     echo "<button class='lista_submenu' type='button'><a href='/admin/admin.php'>Administracion</a></button>";

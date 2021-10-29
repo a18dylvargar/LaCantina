@@ -21,7 +21,7 @@
     <br><br>
         <form method="POST" action="validacio_usuari.php" id="mati">
             <?php
-                $menu = file_get_contents('./json/productos.json');
+                $menu = file_get_contents('./json/productos_mati.json');
                 $menu_json = json_decode($menu,true);
 
                 foreach ($menu_json as $key => $value){
@@ -47,7 +47,7 @@
 
         <form method="POST" action="validacio_usuari.php" id="tarda">
             <?php
-            $menu = file_get_contents('./json/productos2.json');
+            $menu = file_get_contents('./json/productos_tarda.json');
             $menu_json = json_decode($menu,true);
 
             foreach ($menu_json as $key => $value){

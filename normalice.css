@@ -38,13 +38,13 @@ h1{
 /*validacion*/
 #flex_ticket{
     display: flex;
+    justify-content: center;
 }
 #ticket{
     margin-right: 100px;
 }
 label {
     display: block;
-    float: center;
     width: 200px;
     text-align: center;
     text-transform: uppercase;
@@ -72,7 +72,8 @@ label {
     padding-top: 20px;
     padding-left: 0%;
     margin-left: 0%;
-    _padding: 20px;
+    margin-top: 20px;
+    padding: 20px;
 }
 #one{
     background-color: #B9A8A8;

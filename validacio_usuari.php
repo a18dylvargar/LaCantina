@@ -57,26 +57,23 @@
             ?>
             </div>
             <form method="post" action="confirmacion.php">
-                <div class="main">
+                <div class="formulario">
                     <h1>Validació d'usuari</h1>
                     <center>
                         <form action="confirmacion.php">
                             <fieldset>
                                 <legend>Introdueix les següents dades per verificar l'accés al menú</legend>
                                 <div>
-                                    <label for="name">Nom</label>
+                                    <label for="name">Nom<span class="error"> *</span></label>
                                     <input class="texto_validacion" name="username" type="text" id="username" value="">
-                                    <span class="error">*</span>
                                 </div>
                                 <div>
-                                    <label for="tel">Telèfon</label>
+                                    <label for="tel">Telèfon<span class="error"> *</span></label>
                                     <input class="texto_validacion" type="tel" id="tel" name="telefono" value="">
-                                    <span class="error">*</span>
                                 </div>
                                 <div>
-                                    <label for="email">Correu electrònic</label>
+                                    <label for="email">Correu electrònic<span class="error"> *</span></label>
                                     <input class="texto_validacion" type="email" id="correo" name="correo" value="">
-                                    <span class="error">*</span>
                                 </div>
                             </fieldset>
                             <button type="submit" class="botone_validacion" value="Sumbit">Comprar</button>
@@ -86,7 +83,7 @@
                 </div>
             </form>
         </div>
-        <script src="/js/ticket.js"></script>
+        <script src="/js/validacio_usuari.js"></script>
         <input type="button" value="Página anterior" onClick="history.go(-1);">
         <?php
             include "footer.php";

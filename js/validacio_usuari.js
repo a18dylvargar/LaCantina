@@ -27,19 +27,19 @@ document.getElementById("comprar").addEventListener("click",function (e){
     }
 
     if(comprovarNom() == 1){
-        alert("Introduir un nom");
+        alert("Introdueix un nom");
         e.preventDefault();
     }
     else if(comprovarNom() == 2){
-        alert("Solo palabras");
+        alert("Tenen que ser paraules");
         e.preventDefault();
     }
     if(comprovarTele() == 1){
-        alert("Introduce un numero");
+        alert("Introdueix un numero");
         e.preventDefault();
     }
     else if(comprovarTele() == 2){
-        alert("El numero debe contener nueve digitos");
+        alert("El numero de telefono tiene que contener nueve digitos");
         e.preventDefault();
     }
     if(comproEmail() == 1){

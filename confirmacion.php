@@ -11,7 +11,10 @@
     <?php
         include "header.php";
     ?>
-    <h1>Tu Ticket</h1>
+    <center>
+        <h1>Gracies per compre</h1>
+        <h2><u>Tu Ticket:</u></h2>
+    </center>
     <?php
         session_start();
         echo "<center>";

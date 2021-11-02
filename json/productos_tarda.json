@@ -1,27 +1,33 @@
-[
-    {
-        "id": 0,
-    "Nombre": "Tortilla",
-    "Precio": "2.50"
-    },
-    {
-        "id": 1,
-    "Nombre": "Macarrones",
-    "Precio": "3.00"
-    },
-    {
-        "id": 2,
-    "Nombre": "Paella",
-    "Precio": "1.70"
-    },
-    {
-        "id": 3,
-    "Nombre": "Coca-cola",
-    "Precio": "1.00"
-    },
-    {
-        "id": 4,
-    "Nombre": "Agua",
-    "Precio": "0.70"
-    }
-]
+
+    [
+        {
+            "id": 0,
+        "Nombre": "Tortilla",
+        "Precio": "2.50",
+          "Ruta": "../img/tortilla.png"
+        },
+        {
+            "id": 1,
+        "Nombre": "Macarrones",
+        "Precio": "3.00",
+          "Ruta": "../img/macarrones.png"
+        },
+        {
+            "id": 2,
+        "Nombre": "Paella",
+        "Precio": "1.70",
+          "Ruta": "../img/paella.png"
+        },
+        {
+            "id": 3,
+        "Nombre": "Coca-cola",
+        "Precio": "1.00",
+          "Ruta": "../img/cocacola.png"
+        },
+        {
+            "id": 4,
+        "Nombre": "Agua",
+        "Precio": "0.85",
+          "Ruta": "../img/agua.png"
+        }
+    ]

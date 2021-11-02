@@ -5,33 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel='stylesheet' type='text/css' href='../normalice.css'/>
-
+    <link rel='stylesheet' type='text/css' href='../css/normalice.css'/>
 </head>
 <body>
     <?php
         include "../header.php";
     ?>
-    <h1>Pantalla administració</h1>
+    <center>
+        <h1>Pantalla administració</h1>
+    </center>
     <?php
-
-    /*$archivo = "";
-
-    echo "Selecciona un archivo para consultar: <input type='text' id='$archivo' value=''>";
-
-    $fh = fopen("$archivo",'r') or die("Se produjo un error al abrir el archivo");
-
-    $text = "";
-    while($line = fgets($fh)){
-        $text .= $line. "<br>";
-    }
-    fclose($fh);
-    echo $text */
 
     echo "<h2>Totes les comandes</h2>";
 
     $dir = "../admin/comandes";
-    // Open a known directory, and proceed to read its contents
     if (is_dir($dir)) {
         if ($dh = opendir($dir)) {
             echo "<ul>";

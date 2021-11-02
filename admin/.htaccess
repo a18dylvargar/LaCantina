@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Restricted Content"
+AuthUserFile /home/a18dylvargar/web/cantina4.alumnes.inspedralbes.cat/public_html/admin/.htpasswd
+Require user pedralbes

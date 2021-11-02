@@ -7,6 +7,7 @@ function actualitzarTicket(datosMenu){
     let Preu_total=0;
     for(let index = 0;index < cantidades.length;index++){
         if(cantidades[index].value!=0){
+            textTicket += "<br>";
             textTicket += " Article: " + datosMenu[cantidades[index].parentNode.id].Nombre;
             textTicket += "<br>";
             textTicket += " Unitats: " + cantidades[index].value;
@@ -19,7 +20,7 @@ function actualitzarTicket(datosMenu){
         }
     }
     "<br><br>";
-    textTicket+="<h2>   Preu total de todos los productos:   " +  Preu_total + "€</h2>";
+    textTicket+="<h2>   Preu total dels productes:   " +  Preu_total + "€</h2>";
 
     ticket.innerHTML = textTicket;
 }

@@ -1,3 +1,4 @@
+//En aquest fitxer, SweetAlert2 i la llengua han estat modificades del castellà al català.
 window.onload = function(){
     document.getElementById("username").focus();
 }
@@ -27,27 +28,51 @@ document.getElementById("comprar").addEventListener("click",function (e){
     }
 
     if(comprovarNom() == 1){
-        alert("Nom: Introdueix un nom");
+        Swal.fire({
+            icon: 'error',
+            title: 'Nom:',
+            text: 'Introdueix un nom',
+        })
         e.preventDefault();
     }
     else if(comprovarNom() == 2){
-        alert("Nom: Tenen que ser paraules");
+        Swal.fire({
+            icon: 'error',
+            title: 'Nom:',
+            text: 'Tenen que ser paraules',
+        })
         e.preventDefault();
     }
     if(comprovarTele() == 1){
-        alert("Telèfon: Introdueix un numero");
+        Swal.fire({
+            icon: 'error',
+            title: 'Telèfon:',
+            text: 'Introdueix un numero',
+        })
         e.preventDefault();
     }
     else if(comprovarTele() == 2){
-        alert("Telèfon: El numero de telefono tiene que contener nueve digitos");
+        Swal.fire({
+            icon: 'error',
+            title: 'Telèfon:',
+            text: 'El numero de telefon ha de contenir 9 digits',
+        })
         e.preventDefault();
     }
     if(comproEmail() == 1){
-        alert("Correu electrònic: Tienes que escribir un correo");
+        Swal.fire({
+            icon: 'error',
+            title: 'Correu electrònic:',
+            text: 'Has d\'escriure un correu',
+        })
         e.preventDefault();
     }
     else if(comproEmail() == 2){
-        alert("Correu electrònic: Tiene que ser el correo del institut Pedralbes");
+        Swal.fire({
+            icon: 'error',
+            title: 'Correu electrònic:',
+            text: 'Te que ser el correu de l\'institut Pedralbes',
+        })
         e.preventDefault();
     }
 });

@@ -23,13 +23,14 @@
         <h2><u>Tu Ticket:</u></h2>
     </center>
     <?php
+        //Modificat a l'últim minut d'aquest fitxer és per canviar el text del castellà al català.
         session_start();
         echo "<center>";
         echo "Nom: ".$_POST["username"];
         echo "<br>";
         echo "Telèfon: ".$_POST["telefono"];
         echo "<br>";
-        echo "Correu electrònico: ".$_POST["correo"];
+        echo "Correu electrònic: ".$_POST["correo"];
         echo "<br><br>";
         echo $_SESSION["Pedido"];
         echo "<br>";
@@ -49,9 +50,9 @@
         \n
         · Informaciò d'usuario:
         
-            Nomb: $_POST[username]
-            Telefono: $_POST[telefono]
-            Correo: $_POST[correo]
+            Nom: $_POST[username]
+            Telèfon: $_POST[telefono]
+            Correu electrònic: $_POST[correo]
             
         · Informaciò dels productes:
             $_SESSION[Pedido]
